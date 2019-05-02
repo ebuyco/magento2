@@ -1,0 +1,44 @@
+.root {
+    background-color: #F5F9FC;
+    border-top: 1px solid rgb(var(--venia-border));
+    color: black;
+    margin-top: 1rem;
+    padding: 0 1rem;
+}
+
+
+.tile {
+    border-bottom: 1px solid rgb(var(--venia-border));
+    padding: 1rem 2rem;
+  }
+
+/* .tile:nth-child(4){
+    width: 100%;
+    grid-template-columns: 1fr auto 1fr;
+} */
+
+.tileTitle {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+}
+
+.tileBody {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin: 1rem 0;
+}
+
+.copyright {
+    display: block;
+    color: rgb(var(--venia-text-alt));
+    font-size: 0.75rem;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    width: 100%;
+    width: 100%;
+    grid-template-columns: 1fr auto 1fr;
+}
+
+.form{
+    width: 40%;
+}

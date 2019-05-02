@@ -1,0 +1,52 @@
+.root {
+    align-items: center;
+    display: none;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.root_open {
+    composes: root;
+    display: flex;
+}
+
+.form {
+    align-items: center;
+    display: grid;
+    justify-items: stretch;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.searchInner {
+       /* position: relative; */
+        position: absolute;
+        box-sizing: border-box;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 24rem;
+        width: 100%;
+        /* left: 0; */
+        right: 180px;
+        top: 65px;
+
+}
+
+.SearchAutocompleteWrapper {
+    text-align: left;
+    margin: -0.5rem 0 0.5rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+@media (max-width: 400px){
+    .searchInner {
+        right: 70px;
+        width: 26%;
+        top: 56px;
+    }
+
+}
