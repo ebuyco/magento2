@@ -1,11 +1,11 @@
 {
     "name": "learnmagento/carouselwidget",
-    "description": "Banner Widget for Magento 2",
+    "description": "Carousel Widget for Magento 2",
     "type": "magento2-module",
     "license": "MIT",
     "authors": [
       {
-        "name": "Learn Magento",
+        "name": "LearnMagento_CarouselWidget",
         "homepage": ""
       }
     ],
