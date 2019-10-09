@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+        <head>
+            <css src="LearnMagento_CarouselWidget::css/owlcarousel/owl.carousel.min.css"/>
+            <css src="LearnMagento_CarouselWidget::css/owlcarousel/owl.theme.default.min.css"/>
+        </head>
+        <body>
+              <referenceContainer name="before.body.end">
+                    <block name="learnmagento.carousel.widget.js"
+                     class="Magento\Framework\View\Element\Template"  
+                     template="LearnMagento_CarouselWidget::script.phtml"           
+                    />
+                    </block>
+               </referenceContainer>
+        </body>
+</page>
