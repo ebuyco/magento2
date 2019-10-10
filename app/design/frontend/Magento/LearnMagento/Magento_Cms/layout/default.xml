@@ -15,7 +15,7 @@
         <referenceContainer name="contacts_footer_container">
             <block class="Magento\Theme\Block\Html\Header\Logo" name="footer.logo">
                 <arguments>
-                    <argument name="logo_file" xsi:type="string">images/logo-footer.svg</argument>
+                    <argument name="logo_file" xsi:type="string">images/logo.svg</argument>
                     <argument name="logo_alt" xsi:type="string">Pronko Consulting</argument>
                     <argument name="logo_img_width" xsi:type="number">150</argument>
                     <argument name="logo_img_height" xsi:type="number">50</argument>
@@ -32,33 +32,33 @@
             <block class="Magento\Framework\View\Element\Text\TextList\Item" name="footer.contact.line.0">
                 <arguments>
                     <argument name="li_params" xsi:type="array">
-                        <item name="class" xsi:type="string">contact-item</item>
+                        <item name="class" xsi:type="string">Test1</item>
                     </argument>
-                    <argument name="inner_text" xsi:type="string">DUBLIN HQ</argument>
+                    <argument name="inner_text" xsi:type="string">Test2</argument>
                 </arguments>
             </block>
             <block class="Magento\Framework\View\Element\Text\TextList\Item" name="footer.contact.line.1">
                 <arguments>
                     <argument name="li_params" xsi:type="array">
-                        <item name="class" xsi:type="string">contact-item</item>
+                        <item name="class" xsi:type="string">Test3</item>
                     </argument>
-                    <argument name="inner_text" xsi:type="string">43 Beaumont Rd</argument>
+                    <argument name="inner_text" xsi:type="string">Test4</argument>
                 </arguments>
             </block>
             <block class="Magento\Framework\View\Element\Text\TextList\Item" name="footer.contact.line.2">
                 <arguments>
                     <argument name="li_params" xsi:type="array">
-                        <item name="class" xsi:type="string">contact-item</item>
+                        <item name="class" xsi:type="string">Test5</item>
                     </argument>
-                    <argument name="inner_text" xsi:type="string">Dublin, D09, Ireland</argument>
+                    <argument name="inner_text" xsi:type="string">Test6</argument>
                 </arguments>
             </block>
             <block class="Magento\Framework\View\Element\Text\TextList\Item" name="footer.contact.line.3">
                 <arguments>
                     <argument name="li_params" xsi:type="array">
-                        <item name="class" xsi:type="string">contact-item</item>
+                        <item name="class" xsi:type="string">Test7</item>
                     </argument>
-                    <argument name="inner_text" xsi:type="string">info@pronkoconsulting.com</argument>
+                    <argument name="inner_text" xsi:type="string">test@gmail.com</argument>
                 </arguments>
             </block>
         </referenceBlock>
@@ -67,13 +67,13 @@
             <container name="footer_services_title_container" htmlTag="div" htmlClass="footer-title">
                 <block class="Magento\Framework\View\Element\Text" name="footer.contact.title">
                     <arguments>
-                        <argument name="text" xsi:type="string">SERVICES/PRODUCTS</argument>
+                        <argument name="text" xsi:type="string">Test7</argument>
                     </arguments>
                 </block>
             </container>
             <block class="Magento\Framework\View\Element\Html\Links" name="footer_links_services">
                 <arguments>
-                    <argument name="css_class" xsi:type="string">footer links</argument>
+                    <argument name="css_class" xsi:type="string">Test8 links</argument>
                 </arguments>
             </block>
         </referenceContainer>
@@ -81,26 +81,26 @@
         <referenceBlock name="footer_links_services">
             <block class="Magento\Framework\View\Element\Html\Link\Current" name="magento-2-extensions">
                 <arguments>
-                    <argument name="label" xsi:type="string" translate="true">Magento 2 Extensions</argument>
-                    <argument name="path" xsi:type="string">magento-2-extensions</argument>
+                    <argument name="label" xsi:type="string" translate="true">Test9</argument>
+                    <argument name="path" xsi:type="string">Test10</argument>
                 </arguments>
             </block>
             <block class="Magento\Framework\View\Element\Html\Link\Current" name="service-magento-2-development">
                 <arguments>
-                    <argument name="label" xsi:type="string" translate="true">Magento 2 Development</argument>
-                    <argument name="path" xsi:type="string">services/magento-2-development</argument>
+                    <argument name="label" xsi:type="string" translate="true">Test11</argument>
+                    <argument name="path" xsi:type="string">Test12</argument>
                 </arguments>
             </block>
             <block class="Magento\Framework\View\Element\Html\Link\Current" name="service-magento-2-migration">
                 <arguments>
-                    <argument name="label" xsi:type="string" translate="true">Magento 2 Migration</argument>
-                    <argument name="path" xsi:type="string">services/magento-2-migration</argument>
+                    <argument name="label" xsi:type="string" translate="true">Test13</argument>
+                    <argument name="path" xsi:type="string">Test14</argument>
                 </arguments>
             </block>
             <block class="Magento\Framework\View\Element\Html\Link\Current" name="service-magento-2-optimization">
                 <arguments>
-                    <argument name="label" xsi:type="string" translate="true">Magento 2 Optimization</argument>
-                    <argument name="path" xsi:type="string">services/magento-2-optimization</argument>
+                    <argument name="label" xsi:type="string" translate="true">Test15</argument>
+                    <argument name="path" xsi:type="string">Test16</argument>
                 </arguments>
             </block>
         </referenceBlock>
@@ -109,13 +109,13 @@
             <container name="footer_company_info_title_container" htmlTag="div" htmlClass="footer-title">
                 <block class="Magento\Framework\View\Element\Text" name="footer_company_info_title">
                     <arguments>
-                        <argument name="text" xsi:type="string">COMPANY</argument>
+                        <argument name="text" xsi:type="string">Test17</argument>
                     </arguments>
                 </block>
             </container>
             <block class="Magento\Framework\View\Element\Html\Links" name="footer_links_cms">
                 <arguments>
-                    <argument name="css_class" xsi:type="string">footer links</argument>
+                    <argument name="css_class" xsi:type="string">Test18</argument>
                 </arguments>
             </block>
         </referenceContainer>
@@ -123,22 +123,22 @@
         <referenceBlock name="footer_links_cms">
             <block class="Magento\Framework\View\Element\Html\Link\Current" name="about-link">
                 <arguments>
-                    <argument name="label" xsi:type="string" translate="true">About us</argument>
-                    <argument name="path" xsi:type="string">about</argument>
+                    <argument name="label" xsi:type="string" translate="true">Test19</argument>
+                    <argument name="path" xsi:type="string">Test20</argument>
                 </arguments>
             </block>
 
             <block class="Magento\Framework\View\Element\Html\Link\Current" name="career-link">
                 <arguments>
-                    <argument name="label" xsi:type="string" translate="true">Career</argument>
-                    <argument name="path" xsi:type="string">career</argument>
+                    <argument name="label" xsi:type="string" translate="true">Test21</argument>
+                    <argument name="path" xsi:type="string">Test22</argument>
                 </arguments>
             </block>
 
             <block class="Magento\Framework\View\Element\Html\Link\Current" name="terms-link">
                 <arguments>
-                    <argument name="label" xsi:type="string" translate="true">Terms and Conditions</argument>
-                    <argument name="path" xsi:type="string">terms</argument>
+                    <argument name="label" xsi:type="string" translate="true">Test23</argument>
+                    <argument name="path" xsi:type="string">Test24</argument>
                 </arguments>
             </block>
         </referenceBlock>
