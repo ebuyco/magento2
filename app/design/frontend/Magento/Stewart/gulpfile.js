@@ -1,80 +1,48 @@
-var gulp         = require('gulp'),
-sass         = require('gulp-sass'),
-plumber      = require('gulp-plumber'),
-notify       = require('gulp-notify'),
-browserSync = require('browser-sync').create();
+const { src, dest, task, watch, series, parallel, gulp } = require('gulp');
+var sass 		= require('gulp-sass');
+var sourcemaps 	= require('gulp-sourcemaps');
+var browserSync  = require( 'browser-sync' ).create();
 
+var styleWatch   = './web/css/styles/*.scss';
+var styleURL     = './web/css/dest';
 var config = {
 src           : './web/css/styles/*.scss',
 dest          : './web/css/dest'
 };
 
-// var browserSync = require('browser-sync').create();
 
-// Error message
-var onError = function (err) {
-notify.onError({
-    title   : 'Gulp',
-    subtitle: 'Failure!',
-    message : 'Error: <%= error.message %>',
-    sound   : 'Beep'
-})(err);
+function browser_sync() {
+	browserSync.init({
+		server: {
+			baseDir: ([config.dest])
+		}
+	});
+}
 
+function reload(done) {
+	browserSync.reload();
+	done();
+}
 
-this.emit('end');
-};
-
-// Compile CSS
-gulp.task('styles', function () {
-  var stream = gulp
-      .src([config.src])
-      .pipe(plumber({errorHandler: onError}))
-      .pipe(sass().on('error', sass.logError))
-    //   .pipe(browserSync.reload({
-    //     stream: true
-    //   }))
-
-  return stream
-      .pipe(gulp.dest('./web/css/dest'));
-});
-
-gulp.task('dev', function () {
-    var stream = gulp
-        .src([config.src])
-        .pipe(plumber({errorHandler: onError}))
-        .pipe(sass().on('error', sass.logError))
-        .pipe(browserSync.reload({
-          stream: true
-        }))
-  
-    return stream
-        .pipe(gulp.dest('./web/css/dest'))
-    });
-
-
-// Load gulp and plug-ins
-// var gulp    = require('gulp'),
+function styles(done) {
+ 
+      src( [ config.src ] )
+      .pipe( sourcemaps.init() )
+      .pipe( sass({
+        errLogToConsole: true,
+        outputStyle: 'compressed'
+      }) )
    
-//     sass       = require('gulp-sass'),
-//     browserSync =   require('browser-sync').create()
-  
+      .on( 'error', console.error.bind( console ) )
+      .pipe( dest( styleURL ) )
+       .pipe( browserSync.stream() );
+       done();
+}    
 
 
-// Generate less to CSS.
-// gulp.task('less', function() {
-//     return gulp.src(['app/design/frontend/Magento/LearnMagento/web/css/theme.sass'])
-//         .pipe(sass())
-//         .pipe( browserSync() )
-//         .pipe(gulp.dest('pub/static/frontend/Magento/LearnMagento/fil_PH/css'))
-//         .pipe(gulp.dest('pub/static/frontend/Magento/LearnMagento/fil_PH/css'))
-// });
+function watch_style(){
+    watch(styleWatch, series(styles, reload));
+}
 
-
-// Watch Files For Changes and livereload
-// gulp.task('watch', function() {
-//     browserSync.listen();
-//     gulp.watch('app/design/frontend/Magento/LearnMagento/web/css/**/*.sass', ['sass']);
-// });
-
-
-// gulp.task('default', ['sass']);
+task("watch", parallel(browser_sync, watch_style));
+task("styles", styles);
