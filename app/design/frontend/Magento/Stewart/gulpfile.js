@@ -1,14 +1,36 @@
 const { src, dest, task, watch, series, parallel, gulp } = require('gulp');
-var sass 		= require('gulp-sass');
-var sourcemaps 	= require('gulp-sourcemaps');
-var browserSync  = require( 'browser-sync' ).create();
+const sass 		= require('gulp-sass');
+const sourcemaps 	= require('gulp-sourcemaps');
+const browserSync  = require( 'browser-sync' ).create();
+// const plumber = require('gulp-plumber');
+let clean = require('gulp-clean-css');
+// const notify = require('gulp-notify');
 
-var styleWatch   = './web/css/styles/*.scss';
-var styleURL     = './web/css/dest';
-var config = {
-src           : './web/css/styles/*.scss',
-dest          : './web/css/dest'
+const styleWatch   = './web/css/styles/*.scss';
+const styleURL     = './web/css/dest/';
+
+// let config = {
+//     src           : './web/css/styles/*.scss',
+//     dest          : '/pub/static/frontend/Magento/Stewart/fil_PH/css/dest/'
+// };
+
+let config = {
+  src           : './web/css/styles/*.scss',
+  dest          : './web/css/dest/'
 };
+
+
+// var onError = function (err) {
+//       notify.onError({
+//           title   : 'Gulp',
+//           subtitle: 'Failure!',
+//           message : 'Error: <%= error.message %>',
+//           sound   : 'Beep'
+//       })(err);
+
+
+//       this.emit('end');
+// };
 
 
 function browser_sync() {
@@ -21,21 +43,22 @@ function browser_sync() {
 
 function reload(done) {
 	browserSync.reload();
-	done();
+  done();
+  
 }
 
 function styles(done) {
- 
-      src( [ config.src ] )
+       src( [ config.src ] )
       .pipe( sourcemaps.init() )
       .pipe( sass({
         errLogToConsole: true,
         outputStyle: 'compressed'
       }) )
-   
+      // .pipe(plumber({errorHandler: onError}))
       .on( 'error', console.error.bind( console ) )
+      .pipe(clean({force: true}))
       .pipe( dest( styleURL ) )
-       .pipe( browserSync.stream() );
+      .pipe( browserSync.stream() );
        done();
 }    
 
@@ -43,6 +66,8 @@ function styles(done) {
 function watch_style(){
     watch(styleWatch, series(styles, reload));
 }
+
+
 
 task("watch", parallel(browser_sync, watch_style));
 task("styles", styles);
