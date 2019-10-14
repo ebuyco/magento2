@@ -1,0 +1,31 @@
+{
+    "blank": {
+      "src": "vendor/magento/theme-frontend-bbong",
+      "dest": "pub/static/frontend/BbongTheme/MagentoBlank",
+      "locale": ["fil_PH"], 
+      "ignore": [".test"]
+    },
+    "child-with-locale-overwrites": {
+      "src": "app/code/frontend/Magento/Stewart",
+      "dest": "pub/static/frontend/BbongTheme/Stewart/child-with-locale-overwrites",
+      "locale": ["fil_PH"],
+      "parent": "blank"
+    },
+    "all-possible-options": {
+      "src": "vendor/magento/theme-all-possible-options",
+      "dest": "pub/static/frontend/Magento/all-possible-options",
+      "locale": ["fil_PH"], 
+      "parent": "blank",
+      "stylesDir": "web/css",
+      "postcss": ["plugins.autoprefixer()"],
+      "disableSuffix": true,
+      "modules": {
+        "Snowdog_Sample": "vvendor/magento/module-sample"
+      },
+      "ignore": [
+        "vendor/magento/module-sample/{docs,dist}/**",
+        "*.xml"
+      ]
+    }
+  }
+  
